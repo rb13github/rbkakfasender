@@ -1,0 +1,33 @@
+
+1) download the kafka stable version
+2)create data folder and then two subfoler zookeeper(to store the zookeeper logs) and 
+  kafka folder to store kafka logs 
+2) update the the dataDir to
+zookeeper.properties
+
+
+# the directory where the snapshot is stored.
+#dataDir=/tmp/zookeeper
+#rb:30-mar-2021 use back slash else second time server run will have issue
+dataDir=C:/kafka_2.12-2.7.0/data/zookeeper
+
+3) update the use back slash else second time server run will have issue
+# A comma separated list of directories under which to store log files
+#log.dirs=/tmp/kafka-logs
+#rb:30-mar-2021
+log.dirs=C:/kafka_2.12-2.7.0/data/kafka
+
+
+server.properties
+
+4) start zookeeper
+C:\kafka_2.12-2.7.0\bin\windows\zookeeper-server-start.bat ..\..\config\zookeeper.properties
+
+5) start kafka 
+C:\kafka_2.12-2.7.0\bin\windows\kafka-server-start.bat ..\..\config\server.properties
+
+7)Create Producer
+8)Create Receiver
+9)post message
+
+http://localhost:8082/kafka/producer?message=hello%20kafka
